@@ -19,7 +19,7 @@ export default function createMarkup(arr) {
 function createList(arr) {
   const listOfCountry = arr
     .map(elem => {
-      console.log(elem);
+      //   console.log(elem);
       return ` 
        <li>
     <img src="${elem.flags.svg}" alt="${elem.name}" width="100">
@@ -34,17 +34,13 @@ function createList(arr) {
 
 function createCard(arr) {
   const markup = `<h2 class="title">
-            <img class="box-img" src="${arr[0].flags.svg}" alt="${
+            <img  src="${arr[0].flags.svg}" alt="${arr[0].name}" width="60">${
     arr[0].name
-  }" width="60">${arr[0].name}
+  }
           </h2>
-          <p class="text"> <span class="forhand">Capital: </span>${
-            arr[0].capital
-          }</p>
-          <p class="text"> <span class="forhand">Population: </span>${
-            arr[0].population
-          }</p>
-            <p class="text"> <span class="forhand">Languages: </span>${arr[0].languages
+          <p> <span >Capital: </span>${arr[0].capital}</p>
+          <p> <span>Population: </span>${arr[0].population}</p>
+            <p> <span>Languages: </span>${arr[0].languages
               .map(item => item.name)
               .join(' ,')}</p>`;
   countryInfo.innerHTML = markup;

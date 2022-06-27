@@ -4,12 +4,12 @@ import './css/styles.css';
 import Notiflix from 'notiflix';
 const DEBOUNCE_DELAY = 300;
 
-const input = document.querySelector('#search-box');
 Notiflix.Notify.init({
   width: '300px',
   position: 'center-top',
   closeButton: false,
 });
+const input = document.querySelector('#search-box');
 input.addEventListener('input', onInput);
 
 function onInput(e) {
@@ -19,7 +19,7 @@ function onInput(e) {
   }
   // console.log(e.target.value);
   fetchCountries(query).then(response => {
-    console.log(response);
+    // console.log(response);
     // console.log(createMarkup);
     createMarkup(response);
   });
