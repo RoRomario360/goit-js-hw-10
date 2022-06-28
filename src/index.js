@@ -1,5 +1,9 @@
-import createMarkup from './js/templates/createmarkup';
 import fetchCountries from './js/api/fetchCountries';
+import {
+  createMarkup,
+  countryList,
+  countryInfo,
+} from './js/templates/createmarkup';
 import './css/styles.css';
 import Notiflix from 'notiflix';
 import debounce from 'lodash.debounce';
@@ -14,7 +18,9 @@ const input = document.querySelector('#search-box');
 input.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 function onInput(e) {
-  const query = e.target.value;
+  countryList.innerHTML = '';
+  countryInfo.innerHTML = '';
+  const query = e.target.value.trim();
   if (query === '') {
     return;
   }

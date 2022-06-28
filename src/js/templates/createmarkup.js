@@ -2,7 +2,7 @@ import Notiflix from 'notiflix';
 const countryList = document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 
-export default function createMarkup(arr) {
+function createMarkup(arr) {
   countryList.innerHTML = '';
   countryInfo.innerHTML = '';
   // console.log(arr);
@@ -25,7 +25,7 @@ function createList(arr) {
       return ` 
        <li>
     <img src="${elem.flags.svg}" alt="${elem.name}" width="100">
-    <h2>${elem.name}</h2>
+    <h2 class="country-list__text">${elem.name}</h2>
   </li>
   `;
     })
@@ -47,3 +47,5 @@ function createCard(arr) {
               .join(' ,')}</p>`;
   countryInfo.innerHTML = markup;
 }
+
+export { createMarkup, countryList, countryInfo };
