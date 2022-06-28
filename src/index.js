@@ -24,10 +24,8 @@ function onInput(e) {
   if (query === '') {
     return;
   }
-  // console.log(e.target.value);
+
   fetchCountries(query).then(response => {
-    // console.log(response);
-    // console.log(createMarkup);
     createMarkup(response);
   });
 }

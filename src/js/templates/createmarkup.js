@@ -21,7 +21,6 @@ function createMarkup(arr) {
 function createList(arr) {
   const listOfCountry = arr
     .map(elem => {
-      //   console.log(elem);
       return ` 
        <li class="country-list__item">
     <img class="card-img" src="${elem.flags.svg}" alt="${elem.name}" width="100">
