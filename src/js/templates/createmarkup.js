@@ -47,7 +47,7 @@ function createCard(arr) {
           }</p>
             <p class="country-text"> <span class="span-text">Languages: </span>${arr[0].languages
               .map(item => item.name)
-              .join(' ,')}</p>`;
+              .join(', ')}</p>`;
   countryInfo.innerHTML = markup;
 }
 
