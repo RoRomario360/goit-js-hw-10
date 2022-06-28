@@ -5,9 +5,11 @@ const countryInfo = document.querySelector('.country-info');
 export default function createMarkup(arr) {
   countryList.innerHTML = '';
   countryInfo.innerHTML = '';
-  console.log(arr);
+  // console.log(arr);
   if (arr.length > 10) {
-    Notiflix.Notify.info('Cogito ergo sum');
+    Notiflix.Notify.info(
+      'Too many matches found. Please enter a more specific name.'
+    );
     return;
   } else if (arr.length >= 2) {
     createList(arr);
